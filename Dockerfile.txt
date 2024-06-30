@@ -27,34 +27,6 @@ WORKDIR /comfyui
 ARG SKIP_DEFAULT_MODELS
 # Download checkpoints/vae/LoRA to include in image.
 RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then wget -O models/vae/sdxl_vae.safetensors https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors; fi
-RUN wget -O models/checkpoints/leosamsHelloworldXL_helloworldXL70.safetensors https://civitai.com/api/download/models/570138
-RUN wget -O models/loras/1987_Action_Figure_Playset_Packaging.safetensors https://civitai.com/api/download/models/153663
-RUN wget -O models/loras/Aether_Watercolor_and_Ink_v1_SDXL_LoRA.safetensors https://civitai.com/api/download/models/213650
-RUN wget -O models/loras/ArtfullyMOSAIC_SDXL_V1.safetensors https://onedrive.live.com/download?resid=35E2A800A9DAB36C%2176932&authkey=!AGmJGgeZAVMaB50
-RUN wget -O models/loras/Caricatures_V2-000007.safetensors https://onedrive.live.com/download?resid=35E2A800A9DAB36C%2176934&authkey=!AM52G1a8i3iBLag
-RUN wget -O models/loras/Clay_Animation.safetensors https://civitai.com/api/download/models/153730
-RUN wget -O models/loras/Dragon_Ball_XL.safetensors https://civitai.com/api/download/models/451414
-RUN wget -O models/loras/Felted_Doll_v1.0.safetensors https://civitai.com/api/download/models/174466
-RUN wget -O models/loras/LegoRay.safetensors https://civitai.com/api/download/models/371134
-RUN wget -O models/loras/PixarXL.safetensors https://civitai.com/api/download/models/211735
-RUN wget -O models/loras/PixelArtRedmond-Lite64.safetensors https://civitai.com/api/download/models/160844
-RUN wget -O models/loras/sk-kru3ger_style.safetensors https://civitai.com/api/download/models/142129
-RUN wget -O models/loras/Line_Art_SDXL.safetensors https://onedrive.live.com/download?resid=35E2A800A9DAB36C%2176936&authkey=!AP5vVcVLKCxuQTc
-RUN wget -O models/loras/franklinbooth_xl-000006.safetensors https://onedrive.live.com/download?resid=35E2A800A9DAB36C%2176935&authkey=!AHUh6qA6W_RhZDM
-
-RUN mkdir models/instantid
-RUN mkdir models/insightface
-RUN mkdir models/insightface/models/
-RUN mkdir models/insightface/models/antelopev2
-
-RUN wget -O models/instantid/ip-adapter.bin https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin
-RUN wget -O models/insightface/models/antelopev2/1k3d68.onnx https://huggingface.co/MonsterMMORPG/tools/resolve/main/1k3d68.onnx
-RUN wget -O models/insightface/models/antelopev2/2d106det.onnx https://huggingface.co/MonsterMMORPG/tools/resolve/main/2d106det.onnx
-RUN wget -O models/insightface/models/antelopev2/antelopev2.zip https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip
-RUN wget -O models/insightface/models/antelopev2/genderage.onnx https://huggingface.co/MonsterMMORPG/tools/resolve/main/genderage.onnx
-RUN wget -O models/insightface/models/antelopev2/glintr100.onnx https://huggingface.co/MonsterMMORPG/tools/resolve/main/glintr100.onnx
-RUN wget -O models/insightface/models/antelopev2/scrfd_10g_bnkps.onnx https://huggingface.co/MonsterMMORPG/tools/resolve/main/scrfd_10g_bnkps.onnx
-RUN wget -O models/controlnet/faceIDctrlnet.safetensors https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors
 
 RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git custom_nodes/comfyui_controlnet_aux
 RUN git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git custom_nodes/Derfuu_ComfyUI_ModdedNodes
