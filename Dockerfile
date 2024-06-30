@@ -33,12 +33,14 @@ RUN git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git custom_no
 RUN git clone https://github.com/cubiq/ComfyUI_InstantID custom_nodes/ComfyUI_InstantID
 RUN git clone https://github.com/steelax/sdxl_prompt_styler.git custom_nodes/sdxl_prompt_styler
 RUN git clone https://github.com/BadCafeCode/masquerade-nodes-comfyui.git custom_nodes/masquerade-nodes-comfyui
+RUN git clone https://github.com/jitcoder/lora-info.git custom_nodes/lora-info
 
 
 # Install ComfyUI dependencies
-RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
+RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
     && pip3 install --no-cache-dir xformers==0.0.21 \
-    && pip3 install -r requirements.txt
+    && pip3 install -r requirements.txt\
+    && pip3 install opencv-python==4.7.0.72
 
 # Install runpod
 RUN pip3 install runpod requests
